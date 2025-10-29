@@ -86,7 +86,7 @@ fn random_prime(bits: usize) -> BigUint {
     let mut rng = OsRng;
     loop {
         // número aleatório do tamanho pedido
-        let mut candidate = rng.gen_biguint(bits);
+        let mut candidate = rng.gen_biguint(bits as u64);
         // garante bit mais significativo ligado (tamanho) e ímpar
         candidate |= &top_bit;
         candidate |= &one;
